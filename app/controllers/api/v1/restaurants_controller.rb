@@ -38,6 +38,13 @@ class Api::V1::RestaurantsController < Api::BaseController
     @restaurant.destroy
   end
 
+  # GET /restaurants/1/products
+  def products
+    set_restaurant
+    @products = @restaurant.products
+    render json: @products
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

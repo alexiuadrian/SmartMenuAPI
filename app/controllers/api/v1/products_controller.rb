@@ -38,6 +38,13 @@ class Api::V1::ProductsController < Api::BaseController
     @product.destroy
   end
 
+  # GET /products/1/ingredients
+  def ingredients
+    set_product
+    @ingredients = @product.ingredients
+    render json: @ingredients
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

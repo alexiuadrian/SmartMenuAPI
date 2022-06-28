@@ -5,6 +5,9 @@ Rails.application.routes.draw do
       resources :restaurants
       resources :products
       resources :ingredients
+      resources :categories
+      get 'restaurants/:id/products', to: 'restaurants#products'
+      get 'products/:id/ingredients', to: 'products#ingredients'
     end
   end
 

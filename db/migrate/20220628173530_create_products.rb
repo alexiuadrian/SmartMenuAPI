@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.integer :quantity
       t.decimal :price
       t.references :restaurant, foreign_key: true, null: false, on_delete: :cascade
+      t.references :category, foreign_key: true, null: false, on_delete: :cascade
 
       t.timestamps
     end
